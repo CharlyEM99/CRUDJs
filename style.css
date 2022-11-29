@@ -1,0 +1,21 @@
+body{
+    font-family: monospace;
+}
+
+a:hover{
+   text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+#slide-out li a:hover{
+    color: rgb(231, 19, 8);
+    font-weight: bold;
+}
+.divCenter{
+    margin: auto;
+    width: 50%;
+}
+.modal-body .form-horizontal{
+    width: 100%;
+}
+
