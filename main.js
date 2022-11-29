@@ -6,13 +6,15 @@ function save(){
       ListaInventario.length != 0 ? ListaInventario.findLast((item) => id = item.id) : id = 0
     
       const nombre = document.getElementById('inputNombre').value;
+      const categoria = document.getElementById('inputCategoria').value;
+      
       if(document.getElementById('inputInventario').value){
           ListaInventario.forEach(value => {
               if(document.getElementById('inputInventario').value == value.id){
                   value.Nombre         = nombre, 
-                  value.categoria        = document.getElementById('inputCategoria').value, 
+                  value.categoria        = categoria, 
                   value.precio          = document.getElementById('inputPrecio' ).value, 
-                  value.isComplete    = 1
+                  value.isComplete    =     1   
               }
           });
           document.getElementById('id').value = ''
