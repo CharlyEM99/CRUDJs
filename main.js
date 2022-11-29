@@ -4,11 +4,12 @@ function save(){
       ListaInventario = JSON.parse(localStorage.getItem('listItem3')) ?? []
       var id
       ListaInventario.length != 0 ? ListaInventario.findLast((item) => id = item.id) : id = 0
-  
+    
+      const nombre = document.getElementById('inputNombre').value;
       if(document.getElementById('inputInventario').value){
           ListaInventario.forEach(value => {
               if(document.getElementById('inputInventario').value == value.id){
-                  value.Nombre         = document.getElementById('inputNombre').value, 
+                  value.Nombre         = nombre, 
                   value.categoria        = document.getElementById('inputCategoria').value, 
                   value.precio          = document.getElementById('inputPrecio' ).value, 
                   value.isComplete    = 1
@@ -18,7 +19,7 @@ function save(){
       }else{
           var item = {
               id          : id + 1, 
-              Nombre       : document.getElementById('inputNombre').value, 
+              Nombre       : nombre, 
               categoria      : document.getElementById('inputCategoria').value, 
               precio        : document.getElementById('inputPrecio').value, 
               isComplete  : 1,
