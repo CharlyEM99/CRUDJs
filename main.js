@@ -7,13 +7,14 @@ function save(){
     
       const nombre = document.getElementById('inputNombre').value;
       const categoria = document.getElementById('inputCategoria').value;
-      
+      const precio = document.getElementById('inputPrecio').value;
+
       if(document.getElementById('inputInventario').value){
           ListaInventario.forEach(value => {
               if(document.getElementById('inputInventario').value == value.id){
                   value.Nombre         = nombre, 
                   value.categoria        = categoria, 
-                  value.precio          = document.getElementById('inputPrecio' ).value, 
+                  value.precio          = precio, 
                   value.isComplete    =     1   
               }
           });
@@ -22,8 +23,8 @@ function save(){
           var item = {
               id          : id + 1, 
               Nombre       : nombre, 
-              categoria      : document.getElementById('inputCategoria').value, 
-              precio        : document.getElementById('inputPrecio').value, 
+              categoria      : categoria, 
+              precio        : precio, 
               isComplete  : 1,
           }
           ListaInventario.push(item)
